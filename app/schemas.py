@@ -17,7 +17,6 @@ class Token(BaseModel):
     token_type: str
 
 class PatientCreate(BaseModel):
-    user_id: int
     age: int
     gender: str
     blood_pressure: str

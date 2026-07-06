@@ -37,6 +37,14 @@ form.addEventListener("submit", async (e) => {
             "token",
             data.access_token
         );
+        localStorage.setItem(
+            "user_id",
+            data.user_id
+        );
+        localStorage.setItem(
+            "name",
+            data.name
+        );
 
         window.location.href="dashboard.html";
 

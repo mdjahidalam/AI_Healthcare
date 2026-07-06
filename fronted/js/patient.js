@@ -10,8 +10,6 @@ document.getElementById("patientForm").addEventListener("submit", async function
 
     const patient = {
 
-        user_id: Number(document.getElementById("user_id").value),
-
         age: Number(document.getElementById("age").value),
 
         gender: document.getElementById("gender").value,
@@ -34,7 +32,8 @@ document.getElementById("patientForm").addEventListener("submit", async function
 
             headers:{
 
-                "Content-Type":"application/json"
+                "Content-Type":"application/json",
+                "Authorization": `Bearer ${localStorage.getItem("token")}`
 
             },
 

@@ -4,6 +4,8 @@ from sqlalchemy.orm import Session
 from app.connection import get_db
 from app.models import Patient, User
 from app.schemas import PatientCreate,PatientUpdate
+from fastapi import Header
+from app.auth import decode_access_token
 
 router = APIRouter(
     prefix="/patient",
@@ -11,9 +13,30 @@ router = APIRouter(
 )
 
 @router.post("/")
-def add_patient(patient: PatientCreate, db: Session = Depends(get_db)):
+def add_patient(
+    patient: PatientCreate,
+    authorization: str = Header(...),
+    db: Session = Depends(get_db)
+):
 
-    user = db.query(User).filter(User.id == patient.user_id).first()
+    # Token nikalna
+    token = authorization.replace("Bearer ", "")
+
+    payload = decode_access_token(token)
+
+    if not payload:
+        raise HTTPException(
+            status_code=401,
+            detail="Invalid Token"
+        )
+
+    # Email token se nikalo
+    email = payload["sub"]
+
+    # User database se nikalo
+    user = db.query(User).filter(
+        User.email == email
+    ).first()
 
     if not user:
         raise HTTPException(
@@ -21,8 +44,9 @@ def add_patient(patient: PatientCreate, db: Session = Depends(get_db)):
             detail="User not found"
         )
 
+    # Patient save
     new_patient = Patient(
-        user_id=patient.user_id,
+        user_id=user.id,
         age=patient.age,
         gender=patient.gender,
         blood_pressure=patient.blood_pressure,
@@ -38,7 +62,6 @@ def add_patient(patient: PatientCreate, db: Session = Depends(get_db)):
     return {
         "message": "Patient Added Successfully"
     }
-
 @router.get("/")
 def get_all_patients(db: Session = Depends(get_db)):
     patients = db.query(Patient).all()
