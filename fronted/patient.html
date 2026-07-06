@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Patient Management</title>
+
+    <link rel="stylesheet"
+          href="css/patient.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Sidebar -->
+
+    <div class="sidebar">
+
+        <h2>AI Healthcare</h2>
+
+        <ul>
+
+            <li><a href="dashboard.html">Dashboard</a></li>
+
+            <li><a href="patient.html">Patients</a></li>
+
+            <li><a href="prediction.html">Prediction</a></li>
+
+            <li><a href="history.html">History</a></li>
+
+            <li><a href="index.html">Logout</a></li>
+
+        </ul>
+
+    </div>
+
+
+
+    <!-- Main -->
+
+    <div class="main">
+
+        <h1>Patient Management</h1>
+
+        <div class="form-box">
+
+            <h2>Add Patient</h2>
+
+            <form id="patientForm">
+
+                <input
+                    type="number"
+                    id="user_id"
+                    placeholder="User ID"
+                    required>
+
+                <input
+                    type="number"
+                    id="age"
+                    placeholder="Age"
+                    required>
+
+                <select id="gender">
+
+                    <option value="Male">Male</option>
+
+                    <option value="Female">Female</option>
+
+                </select>
+
+                <input
+                    type="text"
+                    id="blood_pressure"
+                    placeholder="Blood Pressure (120/80)"
+                    required>
+
+                <input
+                    type="number"
+                    id="cholesterol"
+                    placeholder="Cholesterol"
+                    required>
+
+                <input
+                    type="number"
+                    id="glucose"
+                    placeholder="Glucose"
+                    required>
+
+                <input
+                    type="number"
+                    id="heart_rate"
+                    placeholder="Heart Rate"
+                    required>
+
+                <button type="submit">
+
+                    Save Patient
+
+                </button>
+
+            </form>
+
+        </div>
+
+
+
+        <div class="table-box">
+
+            <h2>Patient List</h2>
+
+            <table>
+
+                <thead>
+
+                <tr>
+
+                    <th>ID</th>
+
+                    <th>User ID</th>
+
+                    <th>Age</th>
+
+                    <th>Gender</th>
+
+                    <th>Blood Pressure</th>
+
+                    <th>Cholesterol</th>
+
+                    <th>Glucose</th>
+
+                    <th>Heart Rate</th>
+
+                    <th>Action</th>
+
+                </tr>
+
+                </thead>
+
+                <tbody id="patientTable">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="js/patient.js"></script>
+
+</body>
+
+</html>

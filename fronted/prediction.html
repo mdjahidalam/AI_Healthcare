@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Heart Disease Prediction</title>
+
+    <link rel="stylesheet"
+          href="css/prediction.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Sidebar -->
+
+    <div class="sidebar">
+
+        <h2>AI Healthcare</h2>
+
+        <ul>
+
+            <li><a href="dashboard.html">Dashboard</a></li>
+
+            <li><a href="patient.html">Patients</a></li>
+
+            <li><a href="prediction.html">Prediction</a></li>
+
+            <li><a href="history.html">History</a></li>
+
+            <li><a href="index.html">Logout</a></li>
+
+        </ul>
+
+    </div>
+
+
+
+    <!-- Main -->
+
+    <div class="main">
+
+        <h1>Heart Disease Prediction</h1>
+
+        <div class="prediction-form">
+
+            <form id="predictionForm">
+
+                <input
+                    type="number"
+                    id="patient_id"
+                    placeholder="Patient ID"
+                    required>
+
+                <input
+                    type="number"
+                    id="age"
+                    placeholder="Age"
+                    required>
+
+                <select id="sex">
+
+                    <option value="1">Male</option>
+
+                    <option value="0">Female</option>
+
+                </select>
+
+                <input
+                    type="number"
+                    id="cp"
+                    placeholder="Chest Pain Type"
+                    required>
+
+                <input
+                    type="number"
+                    id="trestbps"
+                    placeholder="Resting Blood Pressure"
+                    required>
+
+                <input
+                    type="number"
+                    id="chol"
+                    placeholder="Cholesterol"
+                    required>
+
+                <input
+                    type="number"
+                    id="fbs"
+                    placeholder="Fasting Blood Sugar"
+                    required>
+
+                <input
+                    type="number"
+                    id="restecg"
+                    placeholder="Rest ECG"
+                    required>
+
+                <input
+                    type="number"
+                    id="thalach"
+                    placeholder="Maximum Heart Rate"
+                    required>
+
+                <input
+                    type="number"
+                    id="exang"
+                    placeholder="Exercise Angina"
+                    required>
+
+                <input
+                    type="number"
+                    step="0.1"
+                    id="oldpeak"
+                    placeholder="Old Peak"
+                    required>
+
+                <input
+                    type="number"
+                    id="slope"
+                    placeholder="Slope"
+                    required>
+
+                <input
+                    type="number"
+                    id="ca"
+                    placeholder="CA"
+                    required>
+
+                <input
+                    type="number"
+                    id="thal"
+                    placeholder="Thal"
+                    required>
+
+                <button type="submit">
+
+                    Predict
+
+                </button>
+
+            </form>
+
+        </div>
+
+
+
+        <div class="result-card">
+
+            <h2>
+
+                Prediction Result
+
+            </h2>
+
+            <h3 id="predictionResult">
+
+                Waiting for Prediction...
+
+            </h3>
+
+            <p>
+
+                Risk Level :
+
+                <span id="riskLevel">
+
+                    --
+
+                </span>
+
+            </p>
+
+            <p>
+
+                Confidence :
+
+                <span id="confidence">
+
+                    --
+
+                </span>
+
+            </p>
+
+        </div>
+        <hr>
+
+    <h3>Doctor Recommendation</h3>
+
+    <p id="recommendation">
+
+        Waiting...
+
+    </p>
+
+    </div>
+
+</div>
+
+<script src="js/prediction.js"></script>
+
+</body>
+
+</html>

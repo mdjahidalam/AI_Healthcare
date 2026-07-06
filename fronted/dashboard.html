@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>AI Healthcare Dashboard</title>
+
+    <link rel="stylesheet"
+          href="css/dashboard.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Sidebar -->
+
+    <div class="sidebar">
+
+        <h2>AI Healthcare</h2>
+
+        <ul>
+
+            <li>
+                <a href="dashboard.html">
+                    Dashboard
+                </a>
+            </li>
+
+            <li>
+                <a href="patient.html">
+                    Patients
+                </a>
+            </li>
+
+            <li>
+                <a href="prediction.html">
+                    Prediction
+                </a>
+            </li>
+
+            <li>
+                <a href="history.html">
+                    History
+                </a>
+            </li>
+
+            <li>
+
+                <a href="#"
+                   onclick="logout()">
+
+                    Logout
+
+                </a>
+
+            </li>
+
+        </ul>
+
+    </div>
+
+
+
+    <!-- Main -->
+
+    <div class="main">
+
+        <div class="topbar">
+
+            <h1>
+
+                AI Healthcare Dashboard
+
+            </h1>
+
+        </div>
+
+
+
+        <!-- Cards -->
+
+        <div class="cards">
+
+            <div class="card">
+
+                <h3>Total Users</h3>
+
+                <h2 id="users">
+
+                    0
+
+                </h2>
+
+            </div>
+
+
+
+            <div class="card">
+
+                <h3>Total Patients</h3>
+
+                <h2 id="patients">
+
+                    0
+
+                </h2>
+
+            </div>
+
+
+
+            <div class="card">
+
+                <h3>Total Predictions</h3>
+
+                <h2 id="predictions">
+
+                    0
+
+                </h2>
+
+            </div>
+
+
+
+            <div class="card">
+
+                <h3>High Risk</h3>
+
+                <h2 id="risk">
+
+                    0
+
+                </h2>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Chart -->
+
+        <div class="chart-container">
+
+            <h2>
+
+                Prediction Statistics
+
+            </h2>
+
+            <canvas id="riskChart">
+
+            </canvas>
+
+        </div>
+
+
+
+        <!-- Recent Prediction -->
+
+        <div class="table-container">
+
+            <h2>
+
+                Recent Predictions
+
+            </h2>
+
+            <table>
+
+                <thead>
+
+                <tr>
+
+                    <th>ID</th>
+
+                    <th>Patient</th>
+
+                    <th>Prediction</th>
+
+                    <th>Risk</th>
+
+                    <th>Confidence</th>
+
+                </tr>
+
+                </thead>
+
+                <tbody id="predictionTable">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src="js/dashboard.js"></script>
+
+</body>
+
+</html>

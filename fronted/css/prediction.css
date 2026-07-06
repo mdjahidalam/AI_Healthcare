@@ -1,0 +1,239 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+
+    background:#f4f7fc;
+
+}
+
+.container{
+
+    display:flex;
+
+}
+
+/* Sidebar */
+
+.sidebar{
+
+    width:240px;
+
+    height:100vh;
+
+    background:#0F4C81;
+
+    color:white;
+
+    position:fixed;
+
+    left:0;
+
+    top:0;
+
+    padding:25px;
+
+}
+
+.sidebar h2{
+
+    text-align:center;
+
+    margin-bottom:40px;
+
+}
+
+.sidebar ul{
+
+    list-style:none;
+
+}
+
+.sidebar ul li{
+
+    margin:18px 0;
+
+}
+
+.sidebar ul li a{
+
+    color:white;
+
+    text-decoration:none;
+
+    display:block;
+
+    padding:12px;
+
+    border-radius:8px;
+
+    transition:.3s;
+
+}
+
+.sidebar ul li a:hover{
+
+    background:white;
+
+    color:#0F4C81;
+
+}
+
+/* Main */
+
+.main{
+
+    margin-left:240px;
+
+    width:calc(100% - 240px);
+
+    padding:30px;
+
+}
+
+.main h1{
+
+    color:#0F4C81;
+
+    margin-bottom:25px;
+
+}
+
+/* Form */
+
+.prediction-form{
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:10px;
+
+    box-shadow:0px 0px 10px rgba(0,0,0,.1);
+
+}
+
+.prediction-form form{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:15px;
+
+}
+
+.prediction-form input,
+.prediction-form select{
+
+    padding:12px;
+
+    border:1px solid #ccc;
+
+    border-radius:6px;
+
+    font-size:15px;
+
+}
+
+.prediction-form button{
+
+    grid-column:span 2;
+
+    padding:14px;
+
+    background:#0F4C81;
+
+    color:white;
+
+    border:none;
+
+    border-radius:6px;
+
+    cursor:pointer;
+
+    font-size:17px;
+
+}
+
+.prediction-form button:hover{
+
+    background:#09375d;
+
+}
+
+/* Result Card */
+
+.result-card{
+
+    margin-top:30px;
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:10px;
+
+    box-shadow:0px 0px 10px rgba(0,0,0,.1);
+
+}
+
+.result-card h2{
+
+    color:#0F4C81;
+
+    margin-bottom:20px;
+
+}
+
+.result-card h3{
+
+    margin-bottom:15px;
+
+    color:#28a745;
+
+}
+
+.result-card p{
+
+    margin:10px 0;
+
+    font-size:18px;
+
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+.sidebar{
+
+display:none;
+
+}
+
+.main{
+
+margin-left:0;
+
+width:100%;
+
+}
+
+.prediction-form form{
+
+grid-template-columns:1fr;
+
+}
+
+.prediction-form button{
+
+grid-column:span 1;
+
+}
+
+}
