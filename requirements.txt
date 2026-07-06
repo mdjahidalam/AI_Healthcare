@@ -1,0 +1,16 @@
+fastapi
+uvicorn
+sqlalchemy
+pymysql
+python-dotenv
+python-multipart
+passlib[bcrypt]
+python-jose
+pydantic-settings
+pandas
+scikit-learn
+joblib
+xgboost
+numpy
+email-validator
+pydantic
