@@ -9,7 +9,7 @@ form.addEventListener("submit", async (e) => {
     const password = document.getElementById("password").value;
 
     const response = await fetch(
-        "http://127.0.0.1:8000/auth/login",
+        "https://ai-healthcare-api.onrender.com/auth/login",
         {
 
             method:"POST",
